@@ -4,6 +4,9 @@ body{
     margin-left: auto;
     margin-right: auto;
     width: 940px;
+    border: 10px solid red;
+    padding: 5px;
+    border-radius: 5px;
 }
 
 h1{
@@ -31,3 +34,5 @@ p{
     padding: 0 45px;
     text-indent: 15px;
 }
+
+
