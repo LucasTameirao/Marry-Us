@@ -58,6 +58,12 @@ header{
     float: left;
 }
 
+.menu-departamentos{
+    clear: left;
+}
+
+
+
 .busca h2,
 .busca form,
 .menu-departamentos h2{
@@ -68,7 +74,6 @@ header{
     background-color: white;
     margin-bottom: 1px;
     padding: 5px 10px;
-    clear: left;
 }
 
 .menu-departamentos a{
