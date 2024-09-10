@@ -78,7 +78,7 @@ header{
 
 .menu-departamentos a{
     color: #333333;
-    text-decoration: none;
+    text-decoration: non;
 }
 
 a:hover{
