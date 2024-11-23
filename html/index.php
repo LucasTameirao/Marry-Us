@@ -24,7 +24,7 @@
         <h1 class="d-flex justify-content-center">Marry-Us</h1>
         <div class="d-flex justify-content-center align-items-center vh-100">
           <div class="p-4 bg-white rounded shadow" style="min-width: 450px;">
-            <form action="index.php" method="POST">
+            <form action="process.php" method="POST">
               <div><h2>Cadastro</h2></div>
               <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Email</label>
@@ -39,7 +39,7 @@
                 <input type="password" class="form-control" name="password-check">
               </div>
               <div class="mb-3">
-                <a href="../html/functionPage.php" class="text-decoration-none"><input type="submit" value="Enviar" class="btn btn-success w-100 rounded-pills"></a>
+                <a href="../html/functionPage.html" class="text-decoration-none"><input type="submit" value="Enviar" class="btn btn-success w-100 rounded-pills"></a>
               </div>
             </form>
           </div>
