@@ -13,9 +13,6 @@
     <header class="bg-primary border-bottom border-2 border-dark">
       <div class="d-flex justify-content-between py-2 px-3 bg-light">
         <h1 class="h3 mb-0">Marry-Us</h1>
-        <nav>
-
-        </nav>
       </div>
     </header>
 

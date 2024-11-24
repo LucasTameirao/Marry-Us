@@ -79,11 +79,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <main>
             <div class="d-flex">
                 <!--Aba de links para navegação-->
-                <div class="bg-light shadow-lg m-0 pe-3 vh-100" style="min-width: 270px;">
+                <div class="bg-light shadow-lg m-0 pe-3 vh-100" style="min-width: 384px;">
                     <div>
                         <nav>
                             <ul class="list-unstyled d-flex flex-column ps-2 pt-4">
-                                <a href="" class="text-decoration-none text-white">
+                                <a href="budget.html" class="text-decoration-none text-white">
                                     <li class="mb-5 bg-success rounded p-2">
                                         Itens para o casamento / Cálculo de Orçamentos
                                     </li>
@@ -112,60 +112,66 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 </div>  
                 
                 <!--Formulário para anotar as tarefas-->
-                <div class="p-3 bg-white radius-5 mt-4 mb-0 shadow-lg mx-auto" style="min-width: 450px;">
-                    <h1>Agenda de Tarefas</h1>
+                <div class="p-3 bg-white radius-5 ms-4 w-100 shadow-sm">
+                    <div>
+                        <h1 class="text-center">Agenda de Tarefas</h1>
 
-                    <!-- Formulário para adicionar uma nova tarefa -->
-                    <form method="POST" action="" class="d-flex flex-column gap-3 mb-3">
-                        <input type="text" class="form-control" name="task_name" placeholder="Nome da tarefa" required>
-                        <input type="date" class="form-control" name="task_date" required>
-                        <input type="time" class="form-control" name="task_time" required>
-                        <button type="submit" class="btn btn-success">Adicionar Tarefa</button>
-                    </form>
-
-                    <!-- Exibição das tarefas -->
-                    <h2>Tarefas Agendadas</h2>
-                    <ul class="list-unstyled">
-                        <?php foreach ($tasks as $task): ?>
-                            <li class="shadow-sm mb-4 rounded-bottom d-flex flex-column p-2">
-                                <strong><?php echo $task['name']; ?></strong>
-                                <div class="d-flex justify-content-between">
-                                    <div>
-                                        Data: <?php echo date("d/m/Y", strtotime($task['date'])); ?> às <?php echo $task['time']; ?>
-                                    </div>
-                                    
-                                    <form method="POST" action="" class="d-inline">
-                                        <input type="hidden" name="remove_id" value="<?php echo $task['id']; ?>">
-                                        <button type="submit" class="btn btn-danger btn-sm">
-                                            <i class="bi bi-trash"></i>
-                                        </button>
-                                    </form>
-                                    
-                                </div>
-                            </li>
-
-                            <!-- Modal para editar tarefa -->
-                            <div class="modal fade" id="editModal<?php echo $task['id']; ?>" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="editModalLabel">Editar Tarefa</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <form method="POST" action="" class="d-flex flex-column gap-3">
-                                                <input type="hidden" name="edit_id" value="<?php echo $task['id']; ?>">
-                                                <input type="text" class="form-control" name="task_name" value="<?php echo $task['name']; ?>" required>
-                                                <input type="date" class="form-control" name="task_date" value="<?php echo $task['date']; ?>" required>
-                                                <input type="time" class="form-control" name="task_time" value="<?php echo $task['time']; ?>" required>
-                                                <button type="submit" class="btn btn-primary">Salvar Alterações</button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
+                        <!-- Formulário para adicionar uma nova tarefa -->
+                        <form method="POST" action="" class="d-flex flex-column gap-3 mb-3">
+                            <input type="text" class="form-control" name="task_name" placeholder="Nome da tarefa" required>
+                            <input type="date" class="form-control" name="task_date" required>
+                            <input type="time" class="form-control" name="task_time" required>
+                            <div style="min-width: 10px;">
+                            <button type="submit" class="btn btn-primary">Adicionar Tarefa</button>
                             </div>
-                        <?php endforeach; ?>
-                    </ul>
+                        </form>
+                    </div>
+                
+                    <div>
+                        <!-- Exibição das tarefas -->
+                        <h2>Tarefas Agendadas</h2>
+                        <ul class="list-unstyled">
+                            <?php foreach ($tasks as $task): ?>
+                                <li class="shadow-sm mb-4 rounded-bottom d-flex flex-column p-2">
+                                    <strong><?php echo $task['name']; ?></strong>
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            Data: <?php echo date("d/m/Y", strtotime($task['date'])); ?> às <?php echo $task['time']; ?>
+                                        </div>
+                                        
+                                        <form method="POST" action="" class="d-inline">
+                                            <input type="hidden" name="remove_id" value="<?php echo $task['id']; ?>">
+                                            <button type="submit" class="btn btn-danger btn-sm">
+                                                <i class="bi bi-trash"></i>
+                                            </button>
+                                        </form>
+                                        
+                                    </div>
+                                </li>
+
+                                <!-- Modal para editar tarefa -->
+                                <div class="modal fade" id="editModal<?php echo $task['id']; ?>" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="editModalLabel">Editar Tarefa</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form method="POST" action="" class="d-flex flex-column gap-3">
+                                                    <input type="hidden" name="edit_id" value="<?php echo $task['id']; ?>">
+                                                    <input type="text" class="form-control" name="task_name" value="<?php echo $task['name']; ?>" required>
+                                                    <input type="date" class="form-control" name="task_date" value="<?php echo $task['date']; ?>" required>
+                                                    <input type="time" class="form-control" name="task_time" value="<?php echo $task['time']; ?>" required>
+                                                    <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </main>
