@@ -22,7 +22,7 @@
         <div class="d-flex justify-content-center align-items-center vh-100">
           <div class="p-4 bg-white rounded shadow" style="min-width: 450px;">
             <form action="process.php" method="POST">
-              <div><h2>Cadastro</h2></div>
+              <div><h2>Login</h2></div>
               <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Email</label>
                 <input type="email" class="form-control" placeholder="name@example.com" name="email">
@@ -32,11 +32,10 @@
                 <input type="password" class="form-control" name="password">
               </div>
               <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Confirme a senha</label>
-                <input type="password" class="form-control" name="password-check">
+                <label for=""><a href="register.php">Cadastrar</a></label>
               </div>
               <div class="mb-3">
-                <a href="../html/functionPage.html" class="text-decoration-none"><input type="submit" value="Enviar" class="btn btn-success w-100 rounded-pills"></a>
+                <a href="../html/functionPage.html" class="text-decoration-none"><input type="submit" value="Entrar" class="btn btn-success w-100 rounded-pills"></a>
               </div>
             </form>
           </div>
