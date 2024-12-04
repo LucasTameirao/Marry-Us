@@ -1,19 +1,28 @@
 <?php 
     include("../php/conexao.php");
 
-    $email = $_POST['email'];
-    $password = $_POST['password'];
+    if(isset($_POST['email']) || isset($_POST['senha'])){
+        if(strlen($_POST['email']) == 0) {
+            echo "Preencha seu email";
+        }
+        else if(strlen($_POST['password']) == 0){
+            echo "Preencha sua senha";
+        }else {
+            
+            $email = $mysqli->real_escape_string($_POST['email']);
+            $senha = $mysqli->real_escape_string($_POST['password']);
 
-    $stmt = $mysqli->prepare("SELECT email FROM email WHERE email = ?");
-    $stmt->execute([$email]);
+            $sql_code = "SELECT * FROM registeruser WHERE email = '$email' AND senha = '$senha'";
+            $sql_query = $mysqli -> query($sql_code);
 
-    $email = $stmt -> fetch();
+            $quantidade = $sql_query -> num_rows;
 
-    if($email){
-        header("Location: functionPage.html");
+            if($quantidade == 1){
+                header('location: functionPage.html');
+            } else{
+                echo "<h1>Falha ao logar! E-mail ou senha incorretos</h1>";
+            }
+        }
     }
-
-    
     
 ?>
-

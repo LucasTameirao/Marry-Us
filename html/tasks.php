@@ -79,37 +79,41 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <main>
             <div class="d-flex">
                 <!--Aba de links para navegação-->
-                <div class="bg-light shadow-lg m-0 pe-3 vh-100" style="min-width: 384px;">
-                    <div>
-                        <nav>
-                            <ul class="list-unstyled d-flex flex-column ps-2 pt-4">
-                                <a href="budget.html" class="text-decoration-none text-white">
-                                    <li class="mb-5 bg-success rounded p-2">
-                                        Itens para o casamento / Cálculo de Orçamentos
-                                    </li>
-                                </a>    
+                <div class="bg-light d-flex shadow-lg m-0 pe-3" style="min-width: 384px;">
+                    <nav>
+                        <ul class="list-unstyled d-flex flex-column h-100 ps-2 pt-4">
+                            <a href="budget.html" class="text-decoration-none text-white">
+                                <li class="mb-5 bg-success rounded p-2">
+                                    Itens para o casamento / Cálculo de Orçamentos
+                                </li>
+                            </a>  
 
-                                <a href="tasks.php" class="text-decoration-none text-white">
-                                    <li class="mb-5 bg-success rounded p-2">
-                                        Quadro de tarefas
-                                    </li>
-                                </a>
-                                
-                                <a href="" class="text-decoration-none text-white">
-                                    <li class="mb-5 bg-success rounded p-2">
-                                        Procura de Locais
-                                    </li>
-                                </a> 
+                            <a href="tasks.php" class="text-decoration-none text-white">
+                                <li class="mb-5 bg-success rounded p-2">
+                                    Quadro de tarefas
+                                </li>
+                            </a>
+                            
+                            <a href="" class="text-decoration-none text-white">
+                                <li class="mb-5 bg-success rounded p-2">
+                                    Procura de Locais
+                                </li>
+                            </a> 
 
-                                <a href="" class="text-decoration-none text-white">
-                                    <li class="mb-5 bg-success rounded p-2">
-                                        Detalhes do local
-                                    </li>
-                                </a>
-                            </ul>
-                        </nav>
-                    </div>   
-                </div>  
+                            <a href="" class="text-decoration-none text-white">
+                                <li class="mb-5 bg-success rounded p-2">
+                                    Contratos
+                                </li>
+                            </a>
+
+                            <a href="casamentos.php" class="text-decoration-none text-white">
+                                <li class="mb-5 bg-success rounded p-2">
+                                    Casamentos
+                                </li>
+                            </a>
+                        </ul>
+                    </nav>
+                </div>
                 
                 <!--Formulário para anotar as tarefas-->
                 <div class="p-3 bg-white radius-5 ms-4 w-100 shadow-sm">
