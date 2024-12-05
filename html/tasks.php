@@ -79,7 +79,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <main>
             <div class="d-flex">
                 <!--Aba de links para navegação-->
-                <div class="bg-light d-flex shadow-lg m-0 pe-3" style="min-width: 384px;">
+                <div class="bg-light d-flex shadow-lg m-0 pe-3 vh-100" style="min-width: 384px;">
                     <nav>
                         <ul class="list-unstyled d-flex flex-column h-100 ps-2 pt-4">
                             <a href="budget.php" class="text-decoration-none text-white">
@@ -93,14 +93,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                                     Quadro de tarefas
                                 </li>
                             </a>
-                            
-                            <a href="" class="text-decoration-none text-white">
-                                <li class="mb-5 bg-success rounded p-2">
-                                    Procura de Locais
-                                </li>
-                            </a> 
 
-                            <a href="" class="text-decoration-none text-white">
+                            <a href="contratos.php" class="text-decoration-none text-white">
                                 <li class="mb-5 bg-success rounded p-2">
                                     Contratos
                                 </li>

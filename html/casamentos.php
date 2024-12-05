@@ -12,8 +12,8 @@
     <header class="bg-primary border-bottom border-2 border-dark">
       <div class="d-flex justify-content-between py-2 px-3 bg-light">
         <h1 class="h3 mb-0">Marry-Us</h1>
-        <nav>
-
+        <nav class="d-flex">
+            
         </nav>
       </div>
     </header>
@@ -34,14 +34,8 @@
                                 Quadro de tarefas
                             </li>
                         </a>
-                        
-                        <a href="" class="text-decoration-none text-white">
-                            <li class="mb-5 bg-success rounded p-2">
-                                Procura de Locais
-                            </li>
-                        </a> 
 
-                        <a href="" class="text-decoration-none text-white">
+                        <a href="contratos.php" class="text-decoration-none text-white">
                             <li class="mb-5 bg-success rounded p-2">
                                 Contratos
                             </li>

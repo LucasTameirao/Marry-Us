@@ -50,14 +50,8 @@
                                     Quadro de tarefas
                                 </li>
                             </a>
-                            
-                            <a href="" class="text-decoration-none text-white">
-                                <li class="mb-5 bg-success rounded p-2">
-                                    Procura de Locais
-                                </li>
-                            </a> 
     
-                            <a href="" class="text-decoration-none text-white">
+                            <a href="contratos.php" class="text-decoration-none text-white">
                                 <li class="mb-5 bg-success rounded p-2">
                                     Contratos
                                 </li>

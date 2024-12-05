@@ -1,0 +1,183 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Tempo de geração: 05/12/2024 às 05:33
+-- Versão do servidor: 10.4.32-MariaDB
+-- Versão do PHP: 8.2.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Banco de dados: `sistema_registro_usuarios`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `arquivos_pdf`
+--
+
+CREATE TABLE `arquivos_pdf` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(255) NOT NULL,
+  `caminho_arquivo` varchar(255) NOT NULL,
+  `div_nome` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `arquivos_pdf`
+--
+
+INSERT INTO `arquivos_pdf` (`id`, `nome`, `caminho_arquivo`, `div_nome`) VALUES
+(3, 'contrato caio/maria', 'uploads/1733372488_sistema_registro_usuarios.pdf', NULL),
+(4, 'contrato caio/maria', 'uploads/1733372740_sistema_registro_usuarios.pdf', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `casamento`
+--
+
+CREATE TABLE `casamento` (
+  `id` int(11) NOT NULL,
+  `nome1` varchar(255) NOT NULL,
+  `genero1` varchar(25) NOT NULL,
+  `nome2` varchar(255) NOT NULL,
+  `genero2` varchar(25) NOT NULL,
+  `datas` varchar(15) NOT NULL,
+  `orcamento` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `casamento`
+--
+
+INSERT INTO `casamento` (`id`, `nome1`, `genero1`, `nome2`, `genero2`, `datas`, `orcamento`) VALUES
+(8, 'caio', 'Masculino', 'lea', 'Masculino', '2024-12-19', 'lucas'),
+(9, 'yugi', 'Outros', 'ana', 'Não informado', '2024-12-12', '600'),
+(12, 'lucas', 'Masculino', 'manu', 'Outros', '2024-12-06', '1.500,00');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `login`
+--
+
+CREATE TABLE `login` (
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `login`
+--
+
+INSERT INTO `login` (`password`) VALUES
+('$2y$10$e8f1smO4lIebm0IFqP/.FOD0CRMscgFtL2vX0Z8T147p1lOfoKMy6'),
+('$2y$10$ZmhmGMgNEqtPkTz5DIcXeOXS8QtQkE0ks7tXgeugQA58BNRALaOqu'),
+('$2y$10$4gCqRXDMJZjcGSxSZDn8Zu3SC1N4dfgqUtAjm67c6seJ9kmcJu5Rm');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `orcamento`
+--
+
+CREATE TABLE `orcamento` (
+  `id` int(11) NOT NULL,
+  `valor` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `registeruser`
+--
+
+CREATE TABLE `registeruser` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(50) NOT NULL,
+  `sobrenome` varchar(50) NOT NULL,
+  `senha` varchar(32) NOT NULL,
+  `sexo` tinyint(4) DEFAULT NULL,
+  `email` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `registeruser`
+--
+
+INSERT INTO `registeruser` (`id`, `nome`, `sobrenome`, `senha`, `sexo`, `email`) VALUES
+(1, 'casamento', 'dasdsa', '231321', 1, 'lucas.atmartins@gmail.com'),
+(2, 'lucas', 'assis', '123123', 2, 'lucas.atmartins@gmail.com'),
+(3, 'lucas', 'assis', '1234', 1, 'emailqualquer@gmail.com');
+
+--
+-- Índices para tabelas despejadas
+--
+
+--
+-- Índices de tabela `arquivos_pdf`
+--
+ALTER TABLE `arquivos_pdf`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices de tabela `casamento`
+--
+ALTER TABLE `casamento`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices de tabela `orcamento`
+--
+ALTER TABLE `orcamento`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices de tabela `registeruser`
+--
+ALTER TABLE `registeruser`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT para tabelas despejadas
+--
+
+--
+-- AUTO_INCREMENT de tabela `arquivos_pdf`
+--
+ALTER TABLE `arquivos_pdf`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT de tabela `casamento`
+--
+ALTER TABLE `casamento`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT de tabela `orcamento`
+--
+ALTER TABLE `orcamento`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de tabela `registeruser`
+--
+ALTER TABLE `registeruser`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
