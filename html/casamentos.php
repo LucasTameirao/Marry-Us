@@ -23,7 +23,7 @@
             <div class="bg-light d-flex shadow-lg m-0 pe-3" style="min-width: 384px;">
                 <nav>
                     <ul class="list-unstyled d-flex flex-column h-100 ps-2 pt-4">
-                        <a href="budget.html" class="text-decoration-none text-white">
+                        <a href="budget.php" class="text-decoration-none text-white">
                             <li class="mb-5 bg-success rounded p-2">
                                 Itens para o casamento / Cálculo de Orçamentos
                             </li>
@@ -49,7 +49,7 @@
 
                         <a href="casamentos.php" class="text-decoration-none text-white">
                             <li class="mb-5 bg-success rounded p-2">
-                                Casamentos
+                                Agendar Casamentos
                             </li>
                         </a>
                     </ul>
@@ -76,6 +76,7 @@
                                             <th>Nome</th>
                                             <th>Genero</th>
                                             <th>Data</th>
+                                            <th>Orçamento</th> 
                                         </tr>';
                                 while ($row = $result->fetch_assoc()) {
                                     echo '<tr>
@@ -84,6 +85,7 @@
                                             <td>' . $row['nome2'] . '</td>
                                             <td>' . $row['genero2'] . '</td>
                                             <td>' . $row['datas'] . '</td>
+                                            <td>' . $row['orcamento'] . '</td>
                                         </tr>';
                                 }
                                 echo '</table>';
@@ -130,7 +132,7 @@
                             </div>
 
                             <div class="mb-3">
-                                <a href="../html/functionPage.html" class="text-decoration-none"><input type="submit" value="Cadastrar" class="btn btn-success w-100 rounded-pills"></a>
+                                <a href="../html/functionPage.html" class="text-decoration-none"><input type="submit" value="Cadastrar" class="btn btn-primary w-100 rounded-pills"></a>
                             </div>
                         </form>
                     </div>

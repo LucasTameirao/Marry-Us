@@ -8,6 +8,24 @@
     <title>Cálculo de Orçamento</title>
 </head>
 <body>
+        <?php 
+            include('../php/conexao.php');
+
+            // Consulta para buscar as categorias
+            $sql = "SELECT id, nome1, nome2 FROM casamento";
+            $result = $mysqli->query($sql);
+
+            // Cria as opções do <select>
+            $options = "";
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    $options .= "<option value='" . $row['id'] . "'>" . htmlspecialchars($row['nome1']) . ' e ' .htmlspecialchars($row['nome2']) . "</option>";
+                }
+            } else {
+                $options .= "<option value=''>Nenhuma categoria encontrada</option>";
+            }
+        ?>
+
         <header class="bg-primary border-bottom border-2 border-dark">
             <a href="functionPage.html" class="text-decoration-none text-dark">
                 <div class="d-flex justify-content-start py-2 px-3 bg-light">
@@ -21,7 +39,7 @@
                 <div class="bg-light d-flex shadow-lg m-0 pe-3" style="min-width: 384px;">
                     <nav>
                         <ul class="list-unstyled d-flex flex-column h-100 ps-2 pt-4">
-                            <a href="budget.html" class="text-decoration-none text-white">
+                            <a href="budget.php" class="text-decoration-none text-white">
                                 <li class="mb-5 bg-success rounded p-2">
                                     Itens para o casamento / Cálculo de Orçamentos
                                 </li>
@@ -47,7 +65,7 @@
     
                             <a href="casamentos.php" class="text-decoration-none text-white">
                                 <li class="mb-5 bg-success rounded p-2">
-                                    Casamentos
+                                    Agendar Casamentos
                                 </li>
                             </a>
                         </ul>
@@ -82,6 +100,22 @@
                 
                         <!-- Preço total -->
                         <h4>Total: <span id="totalPrice">R$ 0.00</span></h4>
+                    </div>
+                    <div class="d-flex justify-content-center flex-column">
+                        <h2 class="text-center">Registrar valor</h2>
+                        <form action="saveBudget.php" method="POST">
+                            <label class="mb-2">Digite o valor total do orçamento</label>
+                            <input type="text" class="form-control mb-3" name="valor">
+
+                            <label>Escolha o casal para adicionar o preço do orçamento</label><br>
+                            <select name="casamento">
+                                <?php echo $options; ?>
+                            </select>
+
+                            <br>
+
+                            <input type="submit" class="btn btn-primary mt-3" id="update">
+                        </form>
                     </div>
                 </div>
                 <script>

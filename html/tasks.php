@@ -82,7 +82,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <div class="bg-light d-flex shadow-lg m-0 pe-3" style="min-width: 384px;">
                     <nav>
                         <ul class="list-unstyled d-flex flex-column h-100 ps-2 pt-4">
-                            <a href="budget.html" class="text-decoration-none text-white">
+                            <a href="budget.php" class="text-decoration-none text-white">
                                 <li class="mb-5 bg-success rounded p-2">
                                     Itens para o casamento / Cálculo de Orçamentos
                                 </li>
@@ -108,7 +108,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
                             <a href="casamentos.php" class="text-decoration-none text-white">
                                 <li class="mb-5 bg-success rounded p-2">
-                                    Casamentos
+                                    Agendar Casamentos
                                 </li>
                             </a>
                         </ul>
